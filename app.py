@@ -16,7 +16,7 @@ import numpy as np
 
 
 # Configure Google Generative AI
-genai.configure(api_key="AIzaSyDTKcYCzD15EgKclOHNTi5A95MyPAFpFJA")  # Replace with your own API Key
+genai.configure(api_key="your_key")  # Replace with your own API Key
 model = genai.GenerativeModel('gemini-1.5-flash')  # Replace model with appropriate name if needed
 
 # Load the embedding model
