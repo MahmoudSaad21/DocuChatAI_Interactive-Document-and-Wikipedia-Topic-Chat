@@ -1,4 +1,4 @@
-# DocuChat AI: Interactive Document and Topic Chat
+# DocuChat AI: Interactive Document and Wikipedia Topic Chat
 
 This project includes a Streamlit-based application (`app.py`) and a Jupyter Notebook (`LLM_Experiments_and_Text_Processing.ipynb`) designed for engaging users in interactive conversations with uploaded PDFs or Wikipedia topics. The app leverages Google Generative AI and other advanced libraries to process and respond to user queries based on contextual information from the provided sources.
 
