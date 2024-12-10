@@ -1,6 +1,7 @@
 streamlit
 google-generativeai
 langchain_community
+langchain_chroma
 sentence-transformers
 PyPDF2
 wikipedia-api
