@@ -99,7 +99,9 @@ This Jupyter Notebook contains:
 
 ## Demonstration
 Watch a video demonstration here:
-[Demo Video](#) *(Replace with a YouTube or hosted video link)*
+
+https://github.com/user-attachments/assets/ac9a0acc-32c1-40c7-a2d2-96b9658f586f
+
 
 ---
 
