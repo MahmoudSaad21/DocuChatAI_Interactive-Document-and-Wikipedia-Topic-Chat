@@ -70,8 +70,8 @@ This Jupyter Notebook contains:
 ### Steps
 1. Clone this repository:
    ```bash
-   git clone <repository_url>
-   cd <repository_name>
+   git clone https://github.com/MahmoudSaad21/DocuChatAI_Interactive-Document-and-Wikipedia-Topic-Chat.git
+   cd DocuChatAI_Interactive-Document-and-Wikipedia-Topic-Chat
    ```
 2. Install dependencies:
    ```bash
