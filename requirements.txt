@@ -5,4 +5,3 @@ sentence-transformers
 PyPDF2
 wikipedia-api
 numpy
-python3-distutils
