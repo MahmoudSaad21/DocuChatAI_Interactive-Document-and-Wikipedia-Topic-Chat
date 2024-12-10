@@ -6,4 +6,3 @@ sentence-transformers
 PyPDF2
 wikipedia-api
 numpy
-pysqlite3-binary
