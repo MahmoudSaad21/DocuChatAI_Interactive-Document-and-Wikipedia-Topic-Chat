@@ -1,6 +1,7 @@
 # DocuChat AI: Interactive Document and Wikipedia Topic Chat
 
-This project includes a Streamlit-based application (`app.py`) and a Jupyter Notebook (`LLM_Experiments_and_Text_Processing.ipynb`) designed for engaging users in interactive conversations with uploaded PDFs or Wikipedia topics. The app leverages Google Generative AI and other advanced libraries to process and respond to user queries based on contextual information from the provided sources.
+This project includes a Streamlit-based application (`app.py`) and a Jupyter Notebook (`LLM_Experiments_and_Text_Processing.ipynb`) designed for engaging users in interactive conversations with uploaded PDFs or Wikipedia topics.The app introduces a vector store for efficient similarity searches and leverages embedding models for robust context understanding. Additionally, a Jupyter Notebook provides experimentation insights with Language Models.
+.
 
 ---
 
@@ -9,15 +10,20 @@ This project includes a Streamlit-based application (`app.py`) and a Jupyter Not
 ### `app.py`
 This Python script powers the Streamlit application. Key functionalities include:
 - **PDF Chat**:
-  - Extracts text from uploaded PDF files using `PyPDF2`.
-  - Integrates Google Generative AI for querying extracted content.
+  - Extracts text from PDFs using `PyPDF2`.
+  - Embeds text chunks into a vector store using `Chroma` for similarity-based search.
+  - Allows natural language querying through Google Generative AI.
+
 - **Wikipedia Chat**:
-  - Retrieves content from Wikipedia using `wikipedia` and `WikipediaLoader`.
-  - Provides an interactive chat experience with selected Wikipedia topics.
+  - Fetches topic content from Wikipedia using `WikipediaLoader`.
+  - Stores content in a vector store for fast retrieval and contextual querying.
+
+- **Vector Store Implementation**:
+  - Introduced `Chroma` as a vector database for managing embeddings.
+  - Supports similarity search to fetch top-relevant text chunks for AI-driven query responses.
+
 - **Embeddings**:
-  - Uses `SentenceTransformer` for creating embeddings of text data.
-- **Streamlit Chat**:
-  - Implements a dynamic chat interface with session-based history management.
+  - Uses a wrapper class around `SentenceTransformer` for embedding documents and queries.
 
 ### `LLM_Experiments_and_Text_Processing.ipynb`
 This Jupyter Notebook contains:
@@ -28,35 +34,38 @@ This Jupyter Notebook contains:
 ---
 
 ## Features
-- **Chat with PDFs**: Upload a PDF document, extract text, and interactively query the content.
-- **Chat with Wikipedia**: Search, select, and chat about Wikipedia topics in real-time.
-- **Embeddings and AI Models**: Utilizes advanced text embeddings and Generative AI for enhanced query responses.
-- **User-Friendly Interface**: Intuitive design powered by Streamlit for seamless interactions.
+- **PDF Chat**: Upload a PDF, index its content, and query it naturally.
+- **Wikipedia Chat**: Search for Wikipedia topics, index the retrieved content, and engage in a Q&A.
+- **Vector-Based Search**: Efficient context retrieval using similarity search in vector stores.
+- **Enhanced Contextual Responses**: Combines embeddings and generative AI for accurate and insightful responses.
+- **Interactive Interface**: Streamlined chat history and query handling using Streamlit's session state.
 
 ---
 
 ## Technical Details
 
 ### Libraries and Tools Used
-- **Streamlit**: Framework for building interactive web applications.
-- **Google Generative AI**: Provides natural language understanding and generation capabilities.
-- **SentenceTransformers**: Embeddings for text comparison and search.
+- **Streamlit**: Framework for creating the web-based interface.
+- **Chroma**: Vector store for similarity-based text retrieval.
+- **Google Generative AI**: Natural language generation and contextual understanding.
+- **SentenceTransformers**: Model for text embeddings.
 - **PyPDF2**: Extracts text from PDF files.
-- **Wikipedia API**: Retrieves content from Wikipedia for processing.
-- **LangChain Community**: Supports text splitting and prompt management.
+- **Wikipedia API**: Searches and retrieves content from Wikipedia.
+- **LangChain**: Tools for text splitting and workflow creation.
 - **Numpy**: Efficient handling of numerical data.
 
 ### System Workflow
 1. **Input Handling**:
    - PDFs are uploaded, and their content is extracted.
    - Wikipedia topics are searched and selected by the user.
-2. **Text Processing**:
-   - Extracted or retrieved text is split and embedded.
-   - Context is created for AI-based query handling.
-3. **AI Query**:
+2. **Text Indexing**:
+   - PDFs and Wikipedia topics are split into chunks and embedded into a vector store.
+3. **Similarity Search**:
+   - Retrieves top-k relevant chunks from the vector store based on query similarity.
+4. **AI Query**:
    - Google Generative AI is prompted with context and user queries.
    - The response is displayed in a conversational format.
-4. **Chat Interface**:
+5. **Chat Interface**:
    - Displays past queries and AI responses in an intuitive layout.
 
 ---
@@ -108,7 +117,12 @@ https://github.com/user-attachments/assets/ac9a0acc-32c1-40c7-a2d2-96b9658f586f
 ## Contributing
 Contributions are welcome! Please create a pull request with your changes.
 
-
+## Acknowledgments
+- [Streamlit](https://streamlit.io/)
+- [Google Generative AI](https://developers.generative.ai/)
+- [Wikipedia](https://www.wikipedia.org/)
+- [LangChain](https://www.langchain.com/)
+- [Chroma](https://www.trychroma.com/)
 ---
 
 ## Acknowledgments
